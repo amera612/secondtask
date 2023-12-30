@@ -9,17 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'Testing Github action' 
-        run: pwd
+      - uses: actions/checkout@v3
+
 
       - name: 'Testing Printing'
         run: echo amera
 
       - name: 'login to Docker hub'
-        run: docker login --username amera612 --password dckr_pat_-qG8jm9dJdYLfSR-C_dovndHk8o
-     
-      - name: 'Bulding docker image'
-        run: docker build -t amera612/task2 .
+        run: docker login --username ${{secrets.docker_username}} --password ${{ secrets.docker_password }}
+
+      - name: "Bulding docker image"
+        run: docker build -t ${{secrets.docker_username}}/task2 .
       
       - name: 'pushing to Docker hub'
-        run: docker push amera612/task2 
+        run: docker push ${{secrets.docker_username}}/task2 
