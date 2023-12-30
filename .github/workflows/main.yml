@@ -15,3 +15,5 @@ jobs:
       - name: 'Testing Printing'
         run: echo amera
 
+      - name: 'login tu Docker hub'
+        run: docker login --username amera612 --password dckr_pat_-qG8jm9dJdYLfSR-C_dovndHk8o
