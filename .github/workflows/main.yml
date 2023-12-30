@@ -15,5 +15,11 @@ jobs:
       - name: 'Testing Printing'
         run: echo amera
 
-      - name: 'login tu Docker hub'
+      - name: 'login to Docker hub'
         run: docker login --username amera612 --password dckr_pat_-qG8jm9dJdYLfSR-C_dovndHk8o
+     
+      - name: 'Bulding docker image'
+        run: docker build -t amera612/task2 .
+      
+      - name: 'pushing to Docker hub'
+        run: docker push amera612/task2 
